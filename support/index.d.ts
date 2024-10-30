@@ -53,6 +53,13 @@ declare namespace Cypress {
      * @example
      * cy.getCurrentNetwork()
      */
+    performMetamaskAction(): Chainable<Subject>;
+    /**
+     * 
+     * 
+     * /
+     * 
+     *
     getCurrentNetwork(): Chainable<Subject>;
     /**
      * Add network in metamask (and also switch to the newly added network)

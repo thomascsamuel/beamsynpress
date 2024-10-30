@@ -166,38 +166,105 @@ module.exports = {
   },
   async switchToMetamaskNotification() {
     const metamaskExtensionId = await module.exports.metamaskExtensionId();
-
-    let pages = await browser.contexts()[0].pages();
-    for (const page of pages) {
-      if (
-        page
-          .url()
-          .includes(
-            `chrome-extension://${metamaskExtensionId}/notification.html`,
-          )
-      ) {
-        metamaskNotificationWindow = page;
-        retries = 0;
-        await page.bringToFront();
-        await module.exports.waitUntilStable(page);
-        await module.exports.waitFor(
-          notificationPageElements.notificationAppContent,
-          page,
-        );
-        return page;
+  
+    const maxRetries = 10;  // Maximum attempts
+    const retryInterval = 500;  // Wait time between attempts (in milliseconds)
+    let retryCount = 0;
+    let notificationFound = false;
+    
+    while (retryCount < maxRetries) {
+      let pages = await browser.contexts()[0].pages();
+      
+      for (const page of pages) {
+        if (
+          page.url().includes(`chrome-extension://${metamaskExtensionId}/notification.html`)
+        ) {
+          metamaskNotificationWindow = page;
+          notificationFound = true;
+  
+          await page.bringToFront();
+          await module.exports.waitUntilStable(page);
+          await module.exports.waitFor(notificationPageElements.notificationAppContent, page);
+  
+          // Perform interactions
+          await page.waitForSelector('button[data-testid="page-container-footer-next"]');
+          await page.click('button[data-testid="page-container-footer-next"]');
+          await page.waitForSelector('button[data-testid="page-container-footer-next"]');
+          await page.click('button[data-testid="page-container-footer-next"]');
+          await page.waitForSelector('button[data-testid="confirmation-submit-button"]');
+          await page.click('button[data-testid="confirmation-submit-button"]');
+          await page.waitForSelector('button:has-text("Switch network")');
+          await page.click('button:has-text("Switch network")');
+  
+          return page;
+        }
       }
+      
+      if (notificationFound) break;
+  
+      // If the notification window is not found, wait and retry
+      retryCount++;
+      await new Promise(resolve => setTimeout(resolve, retryInterval));
     }
-    await sleep(200);
-    if (retries < 50) {
-      retries++;
-      return await module.exports.switchToMetamaskNotification();
-    } else if (retries >= 50) {
-      retries = 0;
-      throw new Error(
-        '[switchToMetamaskNotification] Max amount of retries to switch to metamask notification window has been reached. It was never found.',
-      );
+  
+    if (!notificationFound) {
+      throw new Error("Metamask notification window did not open in time");
     }
   },
+  
+
+  /////
+  async switchToMetamaskNotificationFurtherAction() {
+    const metamaskExtensionId = await module.exports.metamaskExtensionId();
+  
+    const maxRetries = 10;  // Maximum attempts
+    const retryInterval = 500;  // Wait time between attempts (in milliseconds)
+    let retryCount = 0;
+    let notificationFound = false;
+    
+    while (retryCount < maxRetries) {
+      let pages = await browser.contexts()[0].pages();
+      
+      for (const page of pages) {
+        if (
+          page.url().includes(`chrome-extension://${metamaskExtensionId}/notification.html`)
+        ) {
+          metamaskNotificationWindow = page;
+          notificationFound = true;
+  
+          await page.bringToFront();
+          await module.exports.waitUntilStable(page);
+          await module.exports.waitFor(notificationPageElements.notificationAppContent, page);
+  
+          // Perform interactions
+          
+          await page.waitForSelector('button.button.btn--rounded.btn-primary.page-container__footer-button[data-testid="page-container-footer-next"]');
+          await page.click('button.button.btn--rounded.btn-primary.page-container__footer-button[data-testid="page-container-footer-next"]', { force: true });
+       
+  
+          return page;
+        }
+      }
+      
+      if (notificationFound) break;
+  
+      // If the notification window is not found, wait and retry
+      retryCount++;
+      await new Promise(resolve => setTimeout(resolve, retryInterval));
+    }
+  
+    if (!notificationFound) {
+      throw new Error("Metamask notification window did not open in time");
+    }
+  },
+  //
+
+  async performMetamaskAction() {            
+    
+    await page.click('button.chakra-button.css-3c3n96');
+
+   },
+
   async waitFor(selector, page = metamaskWindow) {
     await module.exports.waitUntilStable(page);
     await page.waitForSelector(selector, { strict: false });

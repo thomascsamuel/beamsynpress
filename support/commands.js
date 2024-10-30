@@ -35,7 +35,14 @@ Cypress.Commands.add('switchToMetamaskNotification', () => {
   return cy.task('switchToMetamaskNotification');
 });
 
+Cypress.Commands.add('performMetamaskAction', () => {
+  return cy.task('performMetamaskAction');
+});
 // metamask commands
+
+Cypress.Commands.add('switchToMetamaskNotificationFurtherAction', () => {
+  return cy.task('switchToMetamaskNotificationFurtherAction');
+});
 
 Cypress.Commands.add('addMetamaskNetwork', network => {
   return cy.task('addMetamaskNetwork', network);
@@ -277,7 +284,7 @@ Cypress.Commands.add(
   'setupMetamask',
   (
     secretWordsOrPrivateKey = 'test test test test test test test test test test test junk',
-    network = 'goerli',
+    network = 'sepolia',
     password = 'Tester@1234',
     enableAdvancedSettings = false,
     enableExperimentalSettings = false,

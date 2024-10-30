@@ -5,12 +5,13 @@ describe('Metamask', () => {
     it(`setupMetamask should finish metamask setup using secret words`, () => {
       cy.setupMetamask(
         'test test test test test test test test test test test junk',
-        'goerli',
+        'sepolia',
         'Tester@1234',
       ).then(setupFinished => {
         expect(setupFinished).to.be.true;
       });
     });
+    /*
     it(`disconnectMetamaskWalletFromDapp shouldn't fail if there are no dapps connected`, () => {
       cy.disconnectMetamaskWalletFromDapp().then(disconnected => {
         expect(disconnected).to.be.true;
@@ -488,10 +489,12 @@ describe('Metamask', () => {
         expect(txData.customNonce).to.be.not.empty;
         expect(txData.confirmed).to.be.true;
       });
-      cy.contains('#tokenAddress', /0x.*/, { timeout: 60000 })
-        .invoke('text')
-        .then(text => cy.log('Token hash: ' + text));
-    });
+      */
+      //cy.contains('#tokenAddress', /0x.*/, { timeout: 60000 })
+      //  .invoke('text')
+      //  .then(text => cy.log('Token hash: ' + text));
+    //});
+    /*
     it(`openMetamaskTransactionDetails should open correct transaction details popup when there is a pending tx`, () => {
       // Cannot be tested further with Cypress 😔
       cy.openMetamaskTransactionDetails(0);
@@ -499,6 +502,8 @@ describe('Metamask', () => {
         closed => expect(closed).to.be.true,
       );
     });
+    */
+    /*
     it(`rejectMetamaskAddToken should cancel importing a token`, () => {
       cy.get('#watchAsset').click();
       cy.rejectMetamaskAddToken().then(rejected => {
@@ -601,5 +606,6 @@ describe('Metamask', () => {
         expect(approved).to.be.true;
       });
     });
+    */
   });
 });

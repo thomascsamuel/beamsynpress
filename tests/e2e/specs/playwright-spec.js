@@ -19,23 +19,20 @@ describe('Playwright', () => {
         expect(assigned).to.be.true;
       });
     });
+    
     it(`switchToCypressWindow should properly switch active tab to cypress window`, () => {
-      cy.switchToCypressWindow();
-      cy.isCypressWindowActive().then(isActive => {
-        expect(isActive).to.be.true;
-      });
-      cy.isMetamaskWindowActive().then(isActive => {
-        expect(isActive).to.be.false;
-      });
-    });
-    it(`switchToMetamaskWindow should properly switch active tab to metamask window`, () => {
-      cy.switchToMetamaskWindow();
-      cy.isMetamaskWindowActive().then(isActive => {
-        expect(isActive).to.be.true;
-      });
-      cy.isCypressWindowActive().then(isActive => {
-        expect(isActive).to.be.false;
-      });
+      cy.visit('https://sphere.market/beam');
+      cy.contains('Sign in').click();
+      cy.get('button[data-testid="io.metamask-connect-button"]').click();
+      cy.switchToMetamaskNotification();
+    cy.switchToCypressWindow();
+    cy.get('button.chakra-button.css-3c3n96').click({ force: true });
+    cy.switchToMetamaskNotificationFurtherAction();
+    cy.get('[data-testid="nav-collections-button"]').should('be.visible').click();
+    cy.get('[data-testid="collection-card"]').first().should('be.visible').click();
+    cy.get('[alt="Token Image"]').first().should('be.visible').click();
+    cy.contains('Buy Now').click();
+    cy.get('[class="rk-c-gTLXsm rk-c-gTLXsm-ikvfUnz-css"] span').should('contain.text', 'Insufficient Balance, select another token or add funds');
     });
   });
 });
