@@ -16,7 +16,7 @@ importers:
     dependencies:
       '@cypress/code-coverage':
         specifier: ^3.11.0
-        version: 3.11.0(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(cypress@12.17.3)(webpack@5.81.0)
+        version: 3.11.0(@babel/core@7.21.8)(@babel/preset-env@7.21.5(@babel/core@7.21.8))(babel-loader@9.1.2(@babel/core@7.21.8)(webpack@5.81.0))(cypress@12.17.4)(webpack@5.81.0)
       '@cypress/webpack-dev-server':
         specifier: ^3.5.2
         version: 3.5.2(debug@4.3.4)(webpack@5.81.0)
@@ -31,10 +31,10 @@ importers:
         version: 1.37.0
       '@testing-library/cypress':
         specifier: ^9.0.0
-        version: 9.0.0(cypress@12.17.3)
+        version: 9.0.0(cypress@12.17.4)
       '@testing-library/react':
         specifier: ^14.0.0
-        version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
+        version: 14.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@types/testing-library__cypress':
         specifier: ^5.0.9
         version: 5.0.9
@@ -69,8 +69,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       cypress:
-        specifier: 12.17.3
-        version: 12.17.3
+        specifier: 12.17.4
+        version: 12.17.4
       cypress-wait-until:
         specifier: ^2.0.1
         version: 2.0.1
@@ -100,7 +100,7 @@ importers:
         version: 7.0.0
       node-fetch:
         specifier: ^2.6.1
-        version: 2.6.9
+        version: 2.6.9(encoding@0.1.13)
       underscore:
         specifier: ^1.13.6
         version: 1.13.6
@@ -125,7 +125,7 @@ importers:
         version: 9.0.0(eslint@8.47.0)
       eslint-config-standard:
         specifier: ^17.1.0
-        version: 17.1.0(eslint-plugin-import@2.28.0)(eslint-plugin-n@15.7.0)(eslint-plugin-promise@6.1.1)(eslint@8.47.0)
+        version: 17.1.0(eslint-plugin-import@2.28.0(eslint@8.47.0))(eslint-plugin-n@15.7.0(eslint@8.47.0))(eslint-plugin-promise@6.1.1(eslint@8.47.0))(eslint@8.47.0)
       eslint-config-turbo:
         specifier: ^1.10.12
         version: 1.10.12(eslint@8.47.0)
@@ -143,7 +143,7 @@ importers:
         version: 11.1.0(eslint@8.47.0)
       eslint-plugin-prettier:
         specifier: ^5.0.0
-        version: 5.0.0(eslint-config-prettier@9.0.0)(eslint@8.47.0)(prettier@3.0.2)
+        version: 5.0.0(@types/eslint@8.37.0)(eslint-config-prettier@9.0.0(eslint@8.47.0))(eslint@8.47.0)(prettier@3.0.2)
       eslint-plugin-promise:
         specifier: ^6.1.1
         version: 6.1.1(eslint@8.47.0)
@@ -167,7 +167,7 @@ importers:
         version: 3.0.2
       release-it:
         specifier: ^16.1.5
-        version: 16.1.5
+        version: 16.1.5(encoding@0.1.13)
       serve:
         specifier: ^14.2.0
         version: 14.2.0
@@ -814,6 +814,7 @@ packages:
   '@humanwhocodes/config-array@0.11.10':
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -821,6 +822,7 @@ packages:
 
   '@humanwhocodes/object-schema@1.2.1':
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    deprecated: Use @eslint/object-schema instead
 
   '@iarna/toml@2.2.5':
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
@@ -1009,6 +1011,7 @@ packages:
   '@playwright/test@1.37.0':
     resolution: {integrity: sha512-181WBLk4SRUyH1Q96VZl7BP6HcK0b7lbdeKisn3N/vnjitk+9HbdlFz/L5fey05vxaAhldIDnzo8KUoy8S3mmQ==}
     engines: {node: '>=16'}
+    deprecated: Please update to the latest version of Playwright to test up-to-date browsers.
     hasBin: true
 
   '@pnpm/config.env-replace@1.1.0':
@@ -1468,6 +1471,7 @@ packages:
   are-we-there-yet@3.0.1:
     resolution: {integrity: sha512-QZW4EDmGwlYur0Yyf/b2uGucHQMa8aFUP7eu9ddR73vvhFyt4V0Vl3QHPcTNJ8l6qYOBdxgXdnBXQrHilfRQBg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
 
   arg@5.0.2:
     resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
@@ -2050,8 +2054,8 @@ packages:
   cypress-wait-until@2.0.1:
     resolution: {integrity: sha512-+IyVnYNiaX1+C+V/LazrJWAi/CqiwfNoRSrFviECQEyolW1gDRy765PZosL2alSSGK8V10Y7BGfOQyZUDgmnjQ==}
 
-  cypress@12.17.3:
-    resolution: {integrity: sha512-/R4+xdIDjUSLYkiQfwJd630S81KIgicmQOLXotFxVXkl+eTeVO+3bHXxdi5KBh/OgC33HWN33kHX+0tQR/ZWpg==}
+  cypress@12.17.4:
+    resolution: {integrity: sha512-gAN8Pmns9MA5eCDFSDJXWKUpaL3IDd89N9TtIupjYnzLSmlpVr+ZR+vb4U/qaMp+lB6tBvAmt7504c3Z4RU5KQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
 
@@ -2560,6 +2564,7 @@ packages:
   eslint@8.47.0:
     resolution: {integrity: sha512-spUQWrdPt+pRVP1TTJLmfRNJJHHZryFmptzcafwSvHsceV81djHOdnEeDmkdotZyLNjDhrOasNK8nikkoG1O8Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -2885,6 +2890,7 @@ packages:
   gauge@4.0.4:
     resolution: {integrity: sha512-f9m+BEN5jkg6a0fZjleidjN51VE1X+mPFQ2DJ0uv1V39oCLCbsGe6yjbBnp7eK7z/+GAon99a3nHuqbuuthyPg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
 
   gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -2979,10 +2985,12 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   global-dirs@3.0.1:
     resolution: {integrity: sha512-NBcGGFbBA9s1VzD41QXDG+3++t9Mn5t1FpLdhESY6oKY4gYTFpX4wO3sqGUa0Srjtbfj3szX0RnemmrVRUdULA==}
@@ -3248,6 +3256,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.3:
     resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
@@ -3613,8 +3622,8 @@ packages:
   jsbn@0.1.1:
     resolution: {integrity: sha512-UVU9dibq2JcFWxQPA6KCqj5O42VOmAY3zQUfEKxU0KpTGXwNoCjkX1e13eHNvw/xPynt6pU0rZ1htjWTNTSXsg==}
 
-  jschardet@3.0.0:
-    resolution: {integrity: sha512-lJH6tJ77V8Nzd5QWRkFYCLc13a3vADkh3r/Fi8HupZGWk2OVVDfnZP8V/VgQgZ+lzW0kG2UGb5hFgt3V3ndotQ==}
+  jschardet@3.1.4:
+    resolution: {integrity: sha512-/kmVISmrwVwtyYU40iQUOp3SUPk2dhNCMsZBQX0R1/jZ8maaXJ/oZIzUOiyOqcgtLnETFKYChbJ5iDC/eWmFHg==}
     engines: {node: '>=0.1.90'}
 
   jsesc@0.5.0:
@@ -4151,6 +4160,7 @@ packages:
   npmlog@6.0.2:
     resolution: {integrity: sha512-/vBvz5Jfr9dT/aFWd0FIRf+T/Q2WBsLENygUaFUqstqsycmZAP/t5BvFJTK0viFmSUxiUKTUplWy5vt+rvKIxg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
 
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
@@ -4500,6 +4510,10 @@ packages:
     resolution: {integrity: sha512-1WsPDsUSMmZH5LeMLegqkPDrsGgsWwk1Exipy2hvB0o/F0ASzbpIctSCcZIK1ykJvtTJULEH+20WOFjMvGnCTg==}
     engines: {node: '>=8'}
 
+  process@0.11.10:
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
+    engines: {node: '>= 0.6.0'}
+
   progress@2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
     engines: {node: '>=0.4.0'}
@@ -4634,6 +4648,7 @@ packages:
   read-package-json@6.0.2:
     resolution: {integrity: sha512-Ismd3km1d/FGzcjm8fBf/4ktkyd0t6pbkjYqu1gvRzOzN+aTxi1eigdZp7441TlszQ+GsdYezgS+g9cgy8QK9w==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    deprecated: This package is no longer supported. Please use @npmcli/package-json instead.
 
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -4804,6 +4819,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rimraf@5.0.1:
@@ -6491,11 +6507,11 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@cypress/code-coverage@3.11.0(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(cypress@12.17.3)(webpack@5.81.0)':
+  '@cypress/code-coverage@3.11.0(@babel/core@7.21.8)(@babel/preset-env@7.21.5(@babel/core@7.21.8))(babel-loader@9.1.2(@babel/core@7.21.8)(webpack@5.81.0))(cypress@12.17.4)(webpack@5.81.0)':
     dependencies:
-      '@cypress/webpack-preprocessor': 5.17.1(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(webpack@5.81.0)
+      '@cypress/webpack-preprocessor': 5.17.1(@babel/core@7.21.8)(@babel/preset-env@7.21.5(@babel/core@7.21.8))(babel-loader@9.1.2(@babel/core@7.21.8)(webpack@5.81.0))(webpack@5.81.0)
       chalk: 4.1.2
-      cypress: 12.17.3
+      cypress: 12.17.4
       dayjs: 1.11.9
       debug: 4.3.4(supports-color@8.1.1)
       execa: 4.1.0
@@ -6551,7 +6567,7 @@ snapshots:
       - webpack
       - webpack-cli
 
-  '@cypress/webpack-preprocessor@5.17.1(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(webpack@5.81.0)':
+  '@cypress/webpack-preprocessor@5.17.1(@babel/core@7.21.8)(@babel/preset-env@7.21.5(@babel/core@7.21.8))(babel-loader@9.1.2(@babel/core@7.21.8)(webpack@5.81.0))(webpack@5.81.0)':
     dependencies:
       '@babel/core': 7.21.8
       '@babel/preset-env': 7.21.5(@babel/core@7.21.8)
@@ -6677,7 +6693,7 @@ snapshots:
   '@microsoft/eslint-formatter-sarif@3.0.0':
     dependencies:
       eslint: 8.47.0
-      jschardet: 3.0.0
+      jschardet: 3.1.4
       lodash: 4.17.21
       utf8: 3.0.0
     transitivePeerDependencies:
@@ -6764,11 +6780,11 @@ snapshots:
     dependencies:
       '@octokit/types': 9.3.2
 
-  '@octokit/core@4.2.4':
+  '@octokit/core@4.2.4(encoding@0.1.13)':
     dependencies:
       '@octokit/auth-token': 3.0.3
-      '@octokit/graphql': 5.0.5
-      '@octokit/request': 6.2.3
+      '@octokit/graphql': 5.0.5(encoding@0.1.13)
+      '@octokit/request': 6.2.3(encoding@0.1.13)
       '@octokit/request-error': 3.0.3
       '@octokit/types': 9.3.2
       before-after-hook: 2.2.3
@@ -6782,9 +6798,9 @@ snapshots:
       is-plain-object: 5.0.0
       universal-user-agent: 6.0.0
 
-  '@octokit/graphql@5.0.5':
+  '@octokit/graphql@5.0.5(encoding@0.1.13)':
     dependencies:
-      '@octokit/request': 6.2.3
+      '@octokit/request': 6.2.3(encoding@0.1.13)
       '@octokit/types': 9.3.2
       universal-user-agent: 6.0.0
     transitivePeerDependencies:
@@ -6792,19 +6808,19 @@ snapshots:
 
   '@octokit/openapi-types@18.0.0': {}
 
-  '@octokit/plugin-paginate-rest@6.1.2(@octokit/core@4.2.4)':
+  '@octokit/plugin-paginate-rest@6.1.2(@octokit/core@4.2.4(encoding@0.1.13))':
     dependencies:
-      '@octokit/core': 4.2.4
+      '@octokit/core': 4.2.4(encoding@0.1.13)
       '@octokit/tsconfig': 1.0.2
       '@octokit/types': 9.3.2
 
-  '@octokit/plugin-request-log@1.0.4(@octokit/core@4.2.4)':
+  '@octokit/plugin-request-log@1.0.4(@octokit/core@4.2.4(encoding@0.1.13))':
     dependencies:
-      '@octokit/core': 4.2.4
+      '@octokit/core': 4.2.4(encoding@0.1.13)
 
-  '@octokit/plugin-rest-endpoint-methods@7.2.3(@octokit/core@4.2.4)':
+  '@octokit/plugin-rest-endpoint-methods@7.2.3(@octokit/core@4.2.4(encoding@0.1.13))':
     dependencies:
-      '@octokit/core': 4.2.4
+      '@octokit/core': 4.2.4(encoding@0.1.13)
       '@octokit/types': 10.0.0
 
   '@octokit/request-error@3.0.3':
@@ -6813,23 +6829,23 @@ snapshots:
       deprecation: 2.3.1
       once: 1.4.0
 
-  '@octokit/request@6.2.3':
+  '@octokit/request@6.2.3(encoding@0.1.13)':
     dependencies:
       '@octokit/endpoint': 7.0.5
       '@octokit/request-error': 3.0.3
       '@octokit/types': 9.3.2
       is-plain-object: 5.0.0
-      node-fetch: 2.6.9
+      node-fetch: 2.6.9(encoding@0.1.13)
       universal-user-agent: 6.0.0
     transitivePeerDependencies:
       - encoding
 
-  '@octokit/rest@19.0.13':
+  '@octokit/rest@19.0.13(encoding@0.1.13)':
     dependencies:
-      '@octokit/core': 4.2.4
-      '@octokit/plugin-paginate-rest': 6.1.2(@octokit/core@4.2.4)
-      '@octokit/plugin-request-log': 1.0.4(@octokit/core@4.2.4)
-      '@octokit/plugin-rest-endpoint-methods': 7.2.3(@octokit/core@4.2.4)
+      '@octokit/core': 4.2.4(encoding@0.1.13)
+      '@octokit/plugin-paginate-rest': 6.1.2(@octokit/core@4.2.4(encoding@0.1.13))
+      '@octokit/plugin-request-log': 1.0.4(@octokit/core@4.2.4(encoding@0.1.13))
+      '@octokit/plugin-rest-endpoint-methods': 7.2.3(@octokit/core@4.2.4(encoding@0.1.13))
     transitivePeerDependencies:
       - encoding
 
@@ -6905,11 +6921,11 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@testing-library/cypress@9.0.0(cypress@12.17.3)':
+  '@testing-library/cypress@9.0.0(cypress@12.17.4)':
     dependencies:
       '@babel/runtime': 7.21.5
       '@testing-library/dom': 8.20.0
-      cypress: 12.17.3
+      cypress: 12.17.4
 
   '@testing-library/dom@8.20.0':
     dependencies:
@@ -6922,7 +6938,7 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/react@14.0.0(react-dom@18.2.0)(react@18.2.0)':
+  '@testing-library/react@14.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@babel/runtime': 7.21.5
       '@testing-library/dom': 8.20.0
@@ -7072,7 +7088,7 @@ snapshots:
   '@types/testing-library__cypress@5.0.9':
     dependencies:
       '@testing-library/dom': 8.20.0
-      cypress: 12.17.3
+      cypress: 12.17.4
 
   '@types/uglify-js@3.17.1':
     dependencies:
@@ -7126,6 +7142,7 @@ snapshots:
       is-glob: 4.0.3
       semver: 7.5.4
       tsutils: 3.21.0(typescript@5.0.4)
+    optionalDependencies:
       typescript: 5.0.4
     transitivePeerDependencies:
       - supports-color
@@ -7162,7 +7179,7 @@ snapshots:
       - utf-8-validate
 
   '@wagmi/chains@1.6.0(typescript@5.0.4)':
-    dependencies:
+    optionalDependencies:
       typescript: 5.0.4
 
   '@webassemblyjs/ast@1.11.5':
@@ -7250,7 +7267,7 @@ snapshots:
   abbrev@1.1.1: {}
 
   abitype@0.9.3(typescript@5.0.4):
-    dependencies:
+    optionalDependencies:
       typescript: 5.0.4
 
   accepts@1.3.8:
@@ -7296,7 +7313,7 @@ snapshots:
       indent-string: 4.0.0
 
   ajv-formats@2.1.1(ajv@8.12.0):
-    dependencies:
+    optionalDependencies:
       ajv: 8.12.0
 
   ajv-keywords@3.5.2(ajv@6.12.6):
@@ -8060,7 +8077,7 @@ snapshots:
 
   cypress-wait-until@2.0.1: {}
 
-  cypress@12.17.3:
+  cypress@12.17.4:
     dependencies:
       '@cypress/request': 2.88.12
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
@@ -8097,6 +8114,7 @@ snapshots:
       minimist: 1.2.8
       ospath: 1.2.2
       pretty-bytes: 5.6.0
+      process: 0.11.10
       proxy-from-env: 1.0.0
       request-progress: 3.0.0
       semver: 7.5.4
@@ -8122,11 +8140,13 @@ snapshots:
   debug@3.2.7(supports-color@8.1.1):
     dependencies:
       ms: 2.1.3
+    optionalDependencies:
       supports-color: 8.1.1
 
   debug@4.3.4(supports-color@8.1.1):
     dependencies:
       ms: 2.1.2
+    optionalDependencies:
       supports-color: 8.1.1
 
   decamelize@1.2.0: {}
@@ -8485,7 +8505,7 @@ snapshots:
     dependencies:
       eslint: 8.47.0
 
-  eslint-config-standard@17.1.0(eslint-plugin-import@2.28.0)(eslint-plugin-n@15.7.0)(eslint-plugin-promise@6.1.1)(eslint@8.47.0):
+  eslint-config-standard@17.1.0(eslint-plugin-import@2.28.0(eslint@8.47.0))(eslint-plugin-n@15.7.0(eslint@8.47.0))(eslint-plugin-promise@6.1.1(eslint@8.47.0))(eslint@8.47.0):
     dependencies:
       eslint: 8.47.0
       eslint-plugin-import: 2.28.0(eslint@8.47.0)
@@ -8508,6 +8528,7 @@ snapshots:
   eslint-module-utils@2.8.0(eslint-import-resolver-node@0.3.7)(eslint@8.47.0):
     dependencies:
       debug: 3.2.7(supports-color@8.1.1)
+    optionalDependencies:
       eslint: 8.47.0
       eslint-import-resolver-node: 0.3.7
     transitivePeerDependencies:
@@ -8582,13 +8603,15 @@ snapshots:
       resolve: 1.22.2
       semver: 6.3.0
 
-  eslint-plugin-prettier@5.0.0(eslint-config-prettier@9.0.0)(eslint@8.47.0)(prettier@3.0.2):
+  eslint-plugin-prettier@5.0.0(@types/eslint@8.37.0)(eslint-config-prettier@9.0.0(eslint@8.47.0))(eslint@8.47.0)(prettier@3.0.2):
     dependencies:
       eslint: 8.47.0
-      eslint-config-prettier: 9.0.0(eslint@8.47.0)
       prettier: 3.0.2
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.5
+    optionalDependencies:
+      '@types/eslint': 8.37.0
+      eslint-config-prettier: 9.0.0(eslint@8.47.0)
 
   eslint-plugin-promise@6.1.1(eslint@8.47.0):
     dependencies:
@@ -9018,7 +9041,7 @@ snapshots:
   flatted@3.2.7: {}
 
   follow-redirects@1.15.2(debug@4.3.4):
-    dependencies:
+    optionalDependencies:
       debug: 4.3.4(supports-color@8.1.1)
 
   for-each@0.3.3:
@@ -9497,12 +9520,13 @@ snapshots:
 
   http-proxy-middleware@2.0.6(@types/express@4.17.17)(debug@4.3.4):
     dependencies:
-      '@types/express': 4.17.17
       '@types/http-proxy': 1.17.11
       http-proxy: 1.18.1(debug@4.3.4)
       is-glob: 4.0.3
       is-plain-obj: 3.0.0
       micromatch: 4.0.5
+    optionalDependencies:
+      '@types/express': 4.17.17
     transitivePeerDependencies:
       - debug
 
@@ -9934,7 +9958,7 @@ snapshots:
 
   jsbn@0.1.1: {}
 
-  jschardet@3.0.0: {}
+  jschardet@3.1.4: {}
 
   jsesc@0.5.0: {}
 
@@ -10025,13 +10049,14 @@ snapshots:
     dependencies:
       cli-truncate: 2.1.0
       colorette: 2.0.20
-      enquirer: 2.3.6
       log-update: 4.0.0
       p-map: 4.0.0
       rfdc: 1.3.0
       rxjs: 7.8.1
       through: 2.3.8
       wrap-ansi: 7.0.0
+    optionalDependencies:
+      enquirer: 2.3.6
 
   loader-runner@4.3.0: {}
 
@@ -10336,9 +10361,11 @@ snapshots:
 
   node-domexception@1.0.0: {}
 
-  node-fetch@2.6.9:
+  node-fetch@2.6.9(encoding@0.1.13):
     dependencies:
       whatwg-url: 5.0.0
+    optionalDependencies:
+      encoding: 0.1.13
 
   node-fetch@3.3.2:
     dependencies:
@@ -10888,6 +10915,8 @@ snapshots:
     dependencies:
       fromentries: 1.3.2
 
+  process@0.11.10: {}
+
   progress@2.0.3: {}
 
   promise-inflight@1.0.1: {}
@@ -11130,10 +11159,10 @@ snapshots:
 
   relateurl@0.2.7: {}
 
-  release-it@16.1.5:
+  release-it@16.1.5(encoding@0.1.13):
     dependencies:
       '@iarna/toml': 2.2.5
-      '@octokit/rest': 19.0.13
+      '@octokit/rest': 19.0.13(encoding@0.1.13)
       async-retry: 1.3.3
       chalk: 5.3.0
       cosmiconfig: 8.2.0
@@ -12057,8 +12086,9 @@ snapshots:
       '@wagmi/chains': 1.6.0(typescript@5.0.4)
       abitype: 0.9.3(typescript@5.0.4)
       isomorphic-ws: 5.0.0(ws@8.12.0)
-      typescript: 5.0.4
       ws: 8.12.0
+    optionalDependencies:
+      typescript: 5.0.4
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -12130,9 +12160,10 @@ snapshots:
       serve-index: 1.9.1
       sockjs: 0.3.24
       spdy: 4.0.2
-      webpack: 5.81.0
       webpack-dev-middleware: 5.3.3(webpack@5.81.0)
       ws: 8.13.0
+    optionalDependencies:
+      webpack: 5.81.0
     transitivePeerDependencies:
       - bufferutil
       - debug
